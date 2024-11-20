@@ -16,7 +16,7 @@ const Login = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/login', formData);
+      const response = await axios.post(`$process.env.NEXT_PUBLIC_API_BASE_URL}/api/auth/login`, formData);
       
       // Handle successful login (e.g., storing token)
       if (response.data.token) {
